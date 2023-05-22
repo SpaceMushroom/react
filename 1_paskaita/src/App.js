@@ -1,10 +1,11 @@
-import FuncButton from "./components/FuncButton";
-import FuncDiv from "./components/FuncDiv";
-import ClassButton from "./components/ClassButton";
-import ClassDiv from "./components/ClassDiv";
-import Greeting from "./components/Greeting";
+// import FuncButton from "./components/FuncButton";
+// import FuncDiv from "./components/FuncDiv";
+// import ClassButton from "./components/ClassButton";
+// import ClassDiv from "./components/ClassDiv";
+// import Greeting from "./components/Greeting";
 import Card from "./components/Card";
 import Avatar from "./components/Avatar";
+import Products from "./components/Products";
 import "./App.css";
 
 function App() {
@@ -40,6 +41,9 @@ function App() {
         <Avatar name="Jonas Jonka" />
         <Avatar name="Benas bonka" />
       </div>
+
+
+      {/* <Products /> */}
     </div>
   );
 }

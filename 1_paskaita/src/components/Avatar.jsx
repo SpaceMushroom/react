@@ -21,7 +21,7 @@ function Avatar(props) {
         backgroundColor: getRandomColor(),
         textAlign: 'center',
         fontSize: 26
-
+        
     }}
     >
         <p>{getInitials(props.name)}</p>
