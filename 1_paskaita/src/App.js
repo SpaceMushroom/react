@@ -3,8 +3,8 @@
 // import ClassButton from "./components/ClassButton";
 // import ClassDiv from "./components/ClassDiv";
 // import Greeting from "./components/Greeting";
-import Card from "./components/Card";
-import Avatar from "./components/Avatar";
+// import Card from "./components/Card";
+// import Avatar from "./components/Avatar";
 import Products from "./components/Products";
 import "./App.css";
 
@@ -26,7 +26,7 @@ function App() {
       <Greeting name="Ignas" />
       <Greeting /> */}
 
-      <Card
+      {/* <Card
         imageUrl="https://a-z-animals.com/media/green-anole-2.jpg"
         title="Lizard"
         subtitle="Lizards blizards"
@@ -40,10 +40,9 @@ function App() {
         <Avatar name="Ignas Grinius" />
         <Avatar name="Jonas Jonka" />
         <Avatar name="Benas bonka" />
-      </div>
+      </div> */}
 
-
-      {/* <Products /> */}
+      <Products />
     </div>
   );
 }

@@ -10,6 +10,7 @@ const PlusMinus = () => {
   const plusNumber = () => {
     setNumber((prevNumber) => prevNumber + 1);
   };
+
   return (
     <div>
       <h1>
