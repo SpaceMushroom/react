@@ -1,16 +1,14 @@
 import { useState } from "react";
 
 const PlusMinus = () => {
-
   const [number, setNumber] = useState(0);
 
-
   const minusNumber = () => {
-    setNumber(prevNumber => prevNumber - 1);
+    setNumber((prevNumber) => prevNumber - 1);
   };
 
-    const plusNumber = () => {
-    setNumber(prevNumber => prevNumber  + 1);
+  const plusNumber = () => {
+    setNumber((prevNumber) => prevNumber + 1);
   };
   return (
     <div>
