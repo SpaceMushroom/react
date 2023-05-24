@@ -5,7 +5,7 @@ const MoodChecker = () => {
   const [message, setMessage] = useState("Kaip jaučiatės?");
 
   const changeMessage = (msg) => {
-    setMessage(msg);
+    setMessage(msg)
     setTimeout(() => {
       setMessage("Kaip jaučiatės?");
     }, 3000);
