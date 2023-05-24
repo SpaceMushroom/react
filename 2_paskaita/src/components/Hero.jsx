@@ -11,4 +11,8 @@ const Hero = (props) => {
   );
 };
 
+Hero.propTypes = {
+  title: PropTypes.string,
+  subtitle: PropTypes.string,
+};
 export default Hero;
