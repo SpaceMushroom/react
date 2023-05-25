@@ -52,7 +52,7 @@ const Product = (props) => {
             padding: "1rem 0",
           }}
         >
-          {props.price + " $"}
+          {props.price.toFixed(2) + " $"}
         </div>
         <div>{props.description}</div>
         <div
@@ -90,12 +90,12 @@ const Product = (props) => {
 };
 
 Product.propTypes = {
-  src: PropTypes.string,
-  title: PropTypes.string,
-  price: PropTypes.number,
-  description: PropTypes.element,
-  availability: PropTypes.number,
-  category: PropTypes.string,
+  src: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  price: PropTypes.number.isRequired,
+  description: PropTypes.element.isRequired,
+  availability: PropTypes.number.isRequired,
+  category: PropTypes.string.isRequired,
 };
 
 export default Product;
