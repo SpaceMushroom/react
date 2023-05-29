@@ -10,12 +10,12 @@ const InputBackground = () => {
   };
 
   const updateColor = (inputValue) => {
-    if (inputValue.length > 3) {
-      setColor("yellow");
+    if (inputValue.length > 9) {
+      setColor("red");
     } else if (inputValue.length > 6) {
       setColor("green");
-    } else if (inputValue.length > 9) {
-      setColor("red");
+    } else if (inputValue.length > 3) {
+      setColor("yellow");
     } else {
       setColor("white");
     }
