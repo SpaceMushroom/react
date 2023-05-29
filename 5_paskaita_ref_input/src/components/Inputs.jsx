@@ -25,7 +25,9 @@ const Inputs = () => {
       />
       <button onClick={handleClick}>Add +10 years</button>
       <span>
-        <h3>{{ name } ? `${name} age is: ${age}` : `Your age is: ${age}`}</h3>
+        <h3>
+          {name !== "" ? `${name} age is: ${age}` : `Your age is: ${age}`}
+        </h3>
       </span>
     </div>
   );

@@ -50,7 +50,9 @@ const App = () => {
       <br />
       <InputExample /> */}
       <Inputs />
+      <br />
       <InputBackground />
+      <br />
       <Convert />
     </div>
   );
