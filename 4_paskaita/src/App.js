@@ -3,6 +3,7 @@ import Product from "./components/Product";
 import Posts from "./components/Posts/Posts";
 import RandomPhotos from "./components/RandomPhotos/RandomPhotos";
 import ChuckJokes from "./components/ChuckJokes/ChuckJokes";
+import { useRef } from "react";
 
 const App = () => {
   return (
@@ -42,9 +43,11 @@ const App = () => {
     //   <RandomPhotos />
     // </div>
 
-    <div>
-      <ChuckJokes />
-    </div>
+    // <div>
+    //   <ChuckJokes />
+    // </div>
+
+    <></>
   );
 };
 

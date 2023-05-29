@@ -22,7 +22,7 @@ const ChuckJokes = () => {
           <option key={index} value={option}>
             {option}
           </option>
-        ))}{" "}
+        ))}
         {/* map naudojamas array paduoti į options */}
       </select>
       {selectedOption && (
