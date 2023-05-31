@@ -4,30 +4,32 @@ import InputExample from "./components/InputExample";
 import Inputs from "./components/Inputs";
 import InputBackground from "./components/InputBackground";
 import Convert from "./components/Convert";
+import Page from "./components/Page/Page";
+import Products from "./components/Products/Products";
 
 const App = () => {
-  // sukuriam ref kintąmąjį
-  let ref = useRef(0); // useRef(pradinė reiškmė)
-  const inputRef = useRef(null); // input arba tiem kurie neturi pradinės reikšmės, naudojam null
-  const todoInputRef = useRef(null);
-  const [todoInput, setTodoInput] = useState("");
-  const [todos, setTodos] = useState([]);
+  // // sukuriam ref kintąmąjį
+  // let ref = useRef(0); // useRef(pradinė reiškmė)
+  // const inputRef = useRef(null); // input arba tiem kurie neturi pradinės reikšmės, naudojam null
+  // const todoInputRef = useRef(null);
+  // const [todoInput, setTodoInput] = useState("");
+  // const [todos, setTodos] = useState([]);
 
-  const handleClick = () => {
-    // ref.current yra pagrindinė reikšmė
-    ref.current = ref.current + 1; // mutuojamas ref.current objektas
-    alert(`You clicked ${ref.current} times!`);
-  };
+  // const handleClick = () => {
+  //   // ref.current yra pagrindinė reikšmė
+  //   ref.current = ref.current + 1; // mutuojamas ref.current objektas
+  //   alert(`You clicked ${ref.current} times!`);
+  // };
 
-  const focusInput = () => {
-    // ref pavyzdys kai sufokusuojamas input elementas
-    inputRef.current.focus();
-  };
+  // const focusInput = () => {
+  //   // ref pavyzdys kai sufokusuojamas input elementas
+  //   inputRef.current.focus();
+  // };
 
-  const handleAddTodo = () => {
-    setTodos((prevTodos) => [...prevTodos, todoInput]);
-    todoInputRef.current.focus();
-  };
+  // const handleAddTodo = () => {
+  //   setTodos((prevTodos) => [...prevTodos, todoInput]);
+  //   todoInputRef.current.focus();
+  // };
 
   return (
     <div>
@@ -49,11 +51,13 @@ const App = () => {
       <div>{todos.join(", ")}</div>
       <br />
       <InputExample /> */}
-      <Inputs />
+      {/* <Inputs />
       <br />
       <InputBackground />
       <br />
-      <Convert />
+      <Convert /> */}
+      {/* <Page /> */}
+      <Products />
     </div>
   );
 };

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 const Convert = () => {
-  const [weight, setWeight] = useState();
+  const [weight, setWeight] = useState(null);
   const [grams, setGrams] = useState(0);
   const [tons, setTons] = useState(0);
   const [pounds, setPounds] = useState(0);
