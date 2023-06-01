@@ -7,29 +7,33 @@ import { useState, useEffect } from "react";
 import "./Products.css";
 
 const Products = () => {
-  const [data, setData] = useState([]);
+  const [products, setProducts] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
+    setIsLoading(true);
+
     fetch("https://golden-whispering-show.glitch.me")
       .then((resp) => resp.json())
       .then((response) => {
-        setTimeout(() => {
-          //setTimeout kad užlaikyti data užsikrovimą iš API
-          setData(response);
-        }, 2000);
+        setIsLoading(false);
+        setProducts(response);
       })
       .catch((error) => console.error(error));
   }, []);
+
+  const removeProduct = (id) => {
+    setProducts((prevProducts) =>
+      prevProducts.filter((item) => item.id !== id)
+    );
+  };
 
   const deleteItem = (id) => {
     fetch(`https://golden-whispering-show.glitch.me/${id}`, {
       method: "DELETE",
     })
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("Error deleting item from API.");
-        }
-        setData((currentData) => currentData.filter((item) => item.id !== id));
+      .then(() => {
+        removeProduct(id);
       })
       .catch((error) => {
         console.error(error);
@@ -38,20 +42,18 @@ const Products = () => {
 
   return (
     <div className="container">
-      {data.length > 0 ? (
-        data.map((item) => (
-          <Product
-            key={item.id}
-            id={item.id}
-            image={item.image}
-            title={item.title}
-            price={item.price}
-            deleteItem={deleteItem}
-          />
-        ))
-      ) : (
-        <p>Loading...</p>
-      )}
+      {isLoading && <p>Loading...</p>}
+      {!isLoading && products.length === 0 && <p>No products found..</p>}
+      {products.map((item) => (
+        <Product
+          key={item.id}
+          id={item.id}
+          image={item.image}
+          title={item.title}
+          price={item.price}
+          deleteItem={deleteItem}
+        />
+      ))}
     </div>
   );
 };
