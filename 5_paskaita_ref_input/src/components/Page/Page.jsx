@@ -1,7 +1,6 @@
 import { v4 as uuidv4 } from "uuid";
 import cardsArray from "./cardsArray";
 import Hero from "./Hero";
-import React from "react";
 import Card from "./Card";
 
 const Page = () => {

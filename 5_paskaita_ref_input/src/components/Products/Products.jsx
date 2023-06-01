@@ -2,7 +2,7 @@
 // Kol neužsikrovė duomenys iš fetch - rodys "Loading.." tekstą (čia naudosim conditional rendering);
 // Kai pasikraus - duomenys bus išsaugoti useState ir iš ten - atsivaizduos puslapyje;
 // Paspaudus delete mygtuką - ištrinins įrašas (pasileis funkciją, kuri update'ins useState prafiltruodama array).
-
+import Product from "./Product";
 import { useState, useEffect } from "react";
 import "./Products.css";
 
@@ -14,7 +14,7 @@ const Products = () => {
       .then((resp) => resp.json())
       .then((response) => {
         setTimeout(() => {
-          //setTimeout kad užlaikyti data užsikrovimą iš
+          //setTimeout kad užlaikyti data užsikrovimą iš API
           setData(response);
         }, 2000);
       })
@@ -40,12 +40,14 @@ const Products = () => {
     <div className="container">
       {data.length > 0 ? (
         data.map((item) => (
-          <div key={item.id} className="product">
-            <img src={item.image} alt={item.title} />
-            <h3>€ {item.price}</h3>
-            <p>{item.title}</p>
-            <button onClick={() => deleteItem(item.id)}>Ištrinti</button>
-          </div>
+          <Product
+            key={item.id}
+            id={item.id}
+            image={item.image}
+            title={item.title}
+            price={item.price}
+            deleteItem={deleteItem}
+          />
         ))
       ) : (
         <p>Loading...</p>
