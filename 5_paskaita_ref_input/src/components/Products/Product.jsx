@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 const Product = ({ id, image, title, price, deleteItem }) => {
   return (
     <div>
@@ -9,6 +11,14 @@ const Product = ({ id, image, title, price, deleteItem }) => {
       </div>
     </div>
   );
+};
+
+Product.propTypes = {
+  id: PropTypes.number.isRequired,
+  image: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  price: PropTypes.number.isRequired,
+  deleteItem: PropTypes.func.isRequired,
 };
 
 export default Product;
