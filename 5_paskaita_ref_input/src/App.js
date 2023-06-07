@@ -6,6 +6,7 @@ import InputBackground from "./components/InputBackground";
 import Convert from "./components/Convert";
 import Page from "./components/Page/Page";
 import Products from "./components/Products/Products";
+import Context from "./components/Context/Context";
 
 const App = () => {
   // // sukuriam ref kintąmąjį
@@ -57,7 +58,8 @@ const App = () => {
       <br />
       <Convert /> */}
       {/* <Page /> */}
-      <Products />
+      {/* <Products /> */}
+      {/* <Context /> */}
     </div>
   );
 };

@@ -1,0 +1,35 @@
+.cardsContainer {
+    display: grid;
+    padding: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 30px; 
+}
+
+.userContainer {
+    display: grid;
+    padding: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 30px; 
+}
+
+.userData {
+    width: 300px;
+    height: 320px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    padding: 1rem;
+    margin: 1rem;
+    border-radius: 20px;
+    transition: box-shadow 0.3s ease;
+    box-shadow: 5px 4px 8px rgba(0, 0, 0, 0.2);
+    background-color: rgba(141, 159, 241, 0.2);
+}
+
+.userData:nth-child(even) {
+    background-color: rgb(234, 232, 246);
+  }
+  
+.userData:nth-child(odd) {
+    background-color: rgb(208, 208, 214); 
+}
