@@ -1,9 +1,12 @@
+import { useContext } from "react";
+import { UserContext } from "../../contexts/UserContext";
 import PropTypes from "prop-types";
 import { useNavigate } from "react-router-dom";
 import "./Card.css";
 
 const Card = ({ name, email, website, phone, id, ...rest }) => {
   const navigate = useNavigate();
+  const { idArray, blockUser, unblockUser } = useContext(UserContext);
 
   const handleClick = () => {
     const stringId = String(id);
@@ -11,8 +14,26 @@ const Card = ({ name, email, website, phone, id, ...rest }) => {
     console.log(stringId);
   };
 
+  const isBlocked = idArray.includes(id);
+
+  const handleBlock = (event) => {
+    event.stopPropagation();
+    blockUser(id);
+  };
+
+  const handleUnblock = (event) => {
+    event.stopPropagation();
+    unblockUser(id);
+  };
+
+  console.log(idArray);
+
   return (
-    <div onClick={handleClick} className="card" {...rest}>
+    <div
+      onClick={handleClick}
+      className={isBlocked ? "card redCard" : "card"}
+      {...rest}
+    >
       <img
         src="https://img.freepik.com/free-icon/user_318-159711.jpg"
         alt="avatar"
@@ -23,6 +44,16 @@ const Card = ({ name, email, website, phone, id, ...rest }) => {
         <p>Website: {website}</p>
         <p>Phone: {phone}</p>
       </div>
+
+      {isBlocked ? (
+        <button className="button" onClick={handleUnblock}>
+          Unblock
+        </button>
+      ) : (
+        <button className="button" onClick={handleBlock}>
+          Block
+        </button>
+      )}
     </div>
   );
 };

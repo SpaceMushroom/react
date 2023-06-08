@@ -3,12 +3,15 @@ import { useState, useEffect } from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Map from "../components/Map";
+import { useContext } from "react";
+import { UserContext } from "../contexts/UserContext";
 import "./pages.css";
 
 const User = () => {
   const { id } = useParams();
   const [user, setUser] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
+  const { idArray, blockUser, unblockUser } = useContext(UserContext);
 
   useEffect(() => {
     setIsLoading(true);
@@ -23,6 +26,20 @@ const User = () => {
       .catch((error) => console.error(error));
   }, [id]);
 
+  const isBlocked = idArray.includes(Number(id));
+
+  const handleBlock = () => {
+    blockUser(Number(id));
+  };
+
+  const handleUnblock = () => {
+    unblockUser(Number(id));
+  };
+
+  console.log(Array, idArray);
+  console.log(typeof id);
+  console.log(isBlocked);
+
   return (
     <div>
       <Header />
@@ -32,8 +49,19 @@ const User = () => {
         {!isLoading && user !== null && (
           <>
             <div className="userContainer">
-              <div className="userData">
-                <h3>User data:</h3>
+              <div className={isBlocked ? "userData redCard" : "userData"}>
+                <div>
+                  <strong>User data:</strong>{" "}
+                  {isBlocked ? (
+                    <button className="button" onClick={handleUnblock}>
+                      Unblock
+                    </button>
+                  ) : (
+                    <button className="button" onClick={handleBlock}>
+                      Block
+                    </button>
+                  )}
+                </div>
                 <p>
                   Full name: <strong>{user.name}</strong>
                 </p>
@@ -42,13 +70,13 @@ const User = () => {
                 <p>Phone: {user.phone}</p>
                 <p>Website: {user.website}</p>
               </div>
-              <div className="userData">
+              <div className={isBlocked ? "userData redCard" : "userData"}>
                 <h3>Company:</h3>
                 <p>Name: {user.company.name}</p>
                 <p>CatchPhrase: {user.company.catchPhrase}</p>
                 <p>Business services: {user.company.bs}</p>
               </div>
-              <div className="userData">
+              <div className={isBlocked ? "userData redCard" : "userData"}>
                 <h3>Address:</h3>
                 <p>City: {user.address.city}</p>
                 <p>Street: {user.address.street}</p>

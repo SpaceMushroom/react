@@ -16,7 +16,7 @@ const Footer = () => {
       <div
         style={{
           paddingBottom: "10px",
-          color: "grey",
+          color: "rgb(157, 148, 168)",
           width: "100%",
           backgroundColor: "rgb(208, 208, 214)",
           textAlign: "center",

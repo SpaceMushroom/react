@@ -9,7 +9,9 @@ const Links = () => {
   };
 
   return (
-    <div style={{ display: "flex", alignItems: "center" }}>
+    <div
+      style={{ display: "flex", alignItems: "center", color: "rgb(95,1,209)" }}
+    >
       <Link to="/">Home</Link>
       <div style={{ padding: "1rem", cursor: "pointer" }} onClick={handleClick}>
         <strong>Users</strong>
