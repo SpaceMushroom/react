@@ -23,7 +23,6 @@ const Users = () => {
       });
   }, []);
 
-  console.log(users);
   return (
     <div>
       <Header />

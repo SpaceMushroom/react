@@ -26,8 +26,6 @@ const Card = ({ name, email, website, phone, id, ...rest }) => {
     unblockUser(id);
   };
 
-  console.log(idArray);
-
   return (
     <div
       onClick={handleClick}
@@ -63,6 +61,8 @@ Card.propTypes = {
   email: PropTypes.string.isRequired,
   website: PropTypes.string.isRequired,
   phone: PropTypes.string.isRequired,
+  id: PropTypes.number.isRequired,
+  rest: PropTypes.any,
 };
 
 export default Card;

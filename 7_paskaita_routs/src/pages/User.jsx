@@ -36,9 +36,9 @@ const User = () => {
     unblockUser(Number(id));
   };
 
-  console.log(Array, idArray);
-  console.log(typeof id);
-  console.log(isBlocked);
+  // console.log(Array, idArray);
+  // console.log(typeof id);
+  // console.log(isBlocked);
 
   return (
     <div>
