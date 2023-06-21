@@ -1,19 +1,26 @@
 @import "../../styles/shadows.scss";
 
 .project-container {
-    box-shadow: $cardShadow;
+  box-shadow: $cardShadow;
+  padding: 2rem;
+  border-radius: 1rem;
 
-    .people {
-        display: flex;
-        
-        gap: 1rem;
-    }
+  .project-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.5rem;
+  }
 
-    img { 
-        height: 300px;
-    }
+  .people {
+    display: flex;
+    gap: 1rem;
+  }
 
-    span {
-        font-weight: 600;
-    }
+  img {
+    height: 300px;
+  }
+
+  span {
+    font-weight: 600;
+  }
 }
